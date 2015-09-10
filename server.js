@@ -10,7 +10,7 @@ var server = http.createServer(function(req, res) {
 			counter += 1;
 			var parsed = JSON.parse(data.toString());
 			var fileName = __dirname + '/../notes' + counter + '.json';
-			fs.writeFile(fileName, data);
+			fs.writeFileSync(fileName, parsed);
 			res.end();
 		});
 	});
@@ -18,6 +18,7 @@ var server = http.createServer(function(req, res) {
 	if(req.method === 'GET'){
 		res.writeHead(200, {'Content-Type': 'text/plain'});
 		res.write('how may I assist you?');
+		res.end();
 	}
 });
 
