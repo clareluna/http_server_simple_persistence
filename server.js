@@ -10,7 +10,7 @@ var server = http.createServer(function(req, res) {
 			counter += 1;
 			var parsed = JSON.parse(data.toString());
 			var fileName = __dirname + '/../notes' + counter + '.json';
-			fs.writeFile(fileName, data);
+			fs.writeFile(fileName, parsed);
 			res.end();
 		});
 	});
