@@ -16,6 +16,7 @@ describe('the http persistence server', function(){
 
 		this.router.get('/test', function(req, res){
 			expect(res.test).to.eql('this is a test');
+			expect(res.status).to.eql(200);
 		});
 		this.router.route(testReq, testRes);	
 	});
@@ -28,6 +29,7 @@ describe('the http persistence server', function(){
 
 		this.router.post('/test', function(req, res){
 			expect(res.test).to.eql('this is a test');
+			expect(res.status).to.eql(200);
 		});
 		this.router.route(testReq, testRes);	
 	});
